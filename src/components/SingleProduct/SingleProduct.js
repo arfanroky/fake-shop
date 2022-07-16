@@ -1,29 +1,31 @@
-import React from 'react';
-import { Link} from 'react-router-dom';
 
-const SingleProduct = ({singleProduct}) => {
-    const {category, title, id, image, price, description ,rating} = singleProduct;
-    return (
-        <div>
-            <div style={{width:'350px', border:'2px solid salmon', margin:'10px'}}>
-                <figure>
-                <img style={{width:'300px'}} src={image} alt="" />
-                </figure>
-              <div style={{padding:'0 10px 0 10px'}}>
-              <span>rate {rating.rate} <br />   reviews { rating?.count}</span>
-                <h2>{category}</h2>
-                <p>{title}</p>
-                <p style={{textAlign:"justify"}}>{description}</p>
-                <p>Price: ${price}</p>
-              </div>
-              <button style={{color:'red'}}>
-                <Link to={`productDetails/${id}`}>
-                    Details
-                </Link>
-              </button>
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Rating from '@mui/material/Rating/Rating';
+
+const SingleProduct = ({ singleProduct }) => {
+  const { category, id, image, rating } =
+    singleProduct;
+  return (
+    <div className="col">
+      <Link className='text-decoration-none' to={`productDetails/${id}`}>
+        <div class="card h-100 border-0 shadow">
+          <img src={image} class="card-img-top w-50 h-75 mx-auto" alt="..." />
+          <div class="card-body">
+            <div className="d-flex justify-content-start align-items-center">
+              <Rating
+                name="half-rating-read"
+                defaultValue={Number(rating.rate)}
+                readOnly
+              />
+              <span className="ms-2 fw-bold text-secondary">Ratings {rating?.count}</span>
             </div>
+            <h5 class="card-title text-capitalize">{category}</h5>
+          </div>
         </div>
-    );
+      </Link>
+    </div>
+  );
 };
 
 export default SingleProduct;
