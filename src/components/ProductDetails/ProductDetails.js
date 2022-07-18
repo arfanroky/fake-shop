@@ -25,16 +25,16 @@ const ProductDetails = () => {
 
   return (
     <div className="container mx-auto pt-5">
-      <div class="card mb-3 border-0">
-        <div class="d-md-flex justify-content-center align-items-center">
-          <div class="">
+      <div class="card mb-3 border-0 pt-5">
+        <div class="row g-4 justify-content-center align-items-center h-100">
+          <figure class="col-md-6">
             <img
               src={image}
-              class="img-fluid w-50"
+              class="img-fluid w-75"
               alt="..."
             />
-          </div>
-            <div class="card-body mt-md-5 pt-md-5 w-md-50">
+          </figure>
+            <div class="card-body col-md-6 mx-auto">
               <h2 class="card-title text-uppercase text-primary">{category}</h2>
             <div className="d-flex justify-content-start align-items-center">
               <Rating
