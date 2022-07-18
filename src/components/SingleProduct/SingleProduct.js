@@ -2,12 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Rating from '@mui/material/Rating/Rating';
+import './SingleProduct.css';
 
 const SingleProduct = ({ singleProduct }) => {
   const { category, id, image, rating } =
     singleProduct;
   return (
-    <div className="col">
+    <div className="col card_hover">
       <Link className='text-decoration-none' to={`productDetails/${id}`}>
         <div class="card h-100 border-0 shadow">
           <img src={image} class="card-img-top w-50 h-75 mx-auto" alt="..." />
@@ -18,7 +19,7 @@ const SingleProduct = ({ singleProduct }) => {
                 defaultValue={Number(rating.rate)}
                 readOnly
               />
-              <span className="ms-2 fw-bold text-secondary">Ratings {rating?.count}</span>
+              <span className="ms-2 fw-bold text-secondary">Reviews {rating?.count}</span>
             </div>
             <h5 class="card-title text-capitalize">{category}</h5>
           </div>

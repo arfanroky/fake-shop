@@ -25,17 +25,16 @@ const ProductDetails = () => {
 
   return (
     <div className="container mx-auto pt-5">
-      <div class="card mb-3 w-75 mx-auto border-0">
-        <div class="row g-2">
-          <div class="col-md-4">
+      <div class="card mb-3 border-0">
+        <div class="d-md-flex justify-content-center align-items-center">
+          <div class="">
             <img
               src={image}
-              class="img-fluid rounded-start"
+              class="img-fluid w-50"
               alt="..."
             />
           </div>
-          <div class="col-md-8">
-            <div class="card-body mt-md-5 pt-md-5">
+            <div class="card-body mt-md-5 pt-md-5 w-md-50">
               <h2 class="card-title text-uppercase text-primary">{category}</h2>
             <div className="d-flex justify-content-start align-items-center">
               <Rating
@@ -43,17 +42,16 @@ const ProductDetails = () => {
                 defaultValue={Number(rating.rate)}
                 readOnly
               />
-              <span className="ms-2 fw-bold text-secondary">Ratings {rating?.count}</span>
+              <span className="ms-2 fw-bold text-secondary">Reviews {rating?.count}</span>
             </div>
               <p className="card-text text-success">{title}</p>
               <p className="card-text text-secondary">
                 {description}
               </p>
-              <p class="card-text">
-                Price: <span className=" text-danger">${price}</span>
+              <p class="card-text fw-bold">Price: <span className="text-danger">${price}</span>
               </p>
+              <button className='btn btn-lg btn-outline-primary'>Delivered</button>
             </div>
-          </div>
         </div>
       </div>
     </div>
