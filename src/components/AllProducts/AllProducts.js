@@ -27,14 +27,11 @@ const AllProducts = () => {
   const indexOfTheFirstPost = indexOfTheLastPost - productPerPage;
   const currentPosts = data.data.slice(indexOfTheFirstPost, indexOfTheLastPost);
 
-
   return (
     <div className="container mx-auto py-5">
       <div className="row row-cols-md-3 row-cols-1 align-items-center g-3">
-        <h1 className="my-5 col text-center">
-          All Products
-        </h1>
-        <div className='col'>
+        <h1 className="my-5 col text-center">All Products</h1>
+        <div className="col">
           <input
             onChange={(e) => setQuery(e.target.value)}
             className="form-control w-50 mx-auto"
@@ -43,9 +40,9 @@ const AllProducts = () => {
             aria-label="Search"
           />
         </div>
-        <div className='col text-center'>
-          <select className='form-select w-50 mx-auto'>
-            <option  value="1">Clothing</option>
+        <div className="col text-center">
+          <select className="form-select w-50 mx-auto">
+            <option value="1">Clothing</option>
             <option value="1">jewelery</option>
             <option value="2">ELECTRONICS</option>
           </select>
